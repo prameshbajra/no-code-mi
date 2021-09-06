@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
       BrowserAnimationsModule,
       FlexLayoutModule,
       MatFormFieldModule,
-      MatInputModule
+      MatInputModule,
+      MatButtonModule,
+      FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

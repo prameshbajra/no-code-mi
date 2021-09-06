@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
     title = 'no-code-mi';
 
+    public isPinPresent = false;
+    public onePin = "";
+    public secondPin = "";
+    public thirdPin = "";
     public positions = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
     public triplets = this.getTriplets();
 
@@ -25,6 +29,12 @@ export class AppComponent {
         const positionTriples = this.positions.filter((position, index) => uniqTriplets.includes(index));
         console.log(positionTriples);
         return positionTriples;
+    }
+
+    public onContinueClick(): any {
+        if (this.onePin && this.secondPin && this.thirdPin) {
+            this.isPinPresent = true;
+        }
     }
 
 }

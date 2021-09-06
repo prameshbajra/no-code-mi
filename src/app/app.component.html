@@ -1,26 +1,35 @@
-<div class ="body">
+<div class="body">
     <div fxLayout="row" fxLayoutAlign="space-around center">
-        <h1>Memorial Information</h1>
+        <h1>Memorable Information</h1>
     </div>
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-        <div fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div *ngIf="!isPinPresent" fxLayout="column" fxLayoutAlign="space-around center">
             <h2>
                 Enter letter/number that is in index:
             </h2>
             <div fxLayout="row" fxLayoutAlign="space-around center">
                 <div fxLayout="column" fxLayoutAlign="space-around center">
                     <h2>{{triplets[0]}}</h2>
-                    <input class = "pin-input" type="password" maxlength="1" minlength="1">
+                    <input [(ngModel)]="onePin" class="pin-input" type="password" maxlength="1" minlength="1">
                 </div>
                 <div fxLayout="column" fxLayoutAlign="space-around center">
                     <h2>{{triplets[1]}}</h2>
-                    <input class = "pin-input" type="password" maxlength="1" minlength="1">
+                    <input [(ngModel)]="secondPin" class="pin-input" type="password" maxlength="1" minlength="1">
                 </div>
                 <div fxLayout="column" fxLayoutAlign="space-around center">
                     <h2>{{triplets[2]}}</h2>
-                    <input class = "pin-input" type="password" maxlength="1" minlength="1">
+                    <input [(ngModel)]="thirdPin" class="pin-input" type="password" maxlength="1" minlength="1">
                 </div>
             </div>
+            <div>
+                <button (click)="onContinueClick()" class="button-mi" mat-raised-button>Continue</button>
+            </div>
+        </div>
+
+        <div *ngIf="isPinPresent" fxLayout="column" fxLayoutAlign="space-around center"> 
+            <h2>
+                You entered : {{this.onePin}}  -  {{this.secondPin}}  -  {{this.thirdPin}}
+            </h2>
         </div>
     </div>
 </div>

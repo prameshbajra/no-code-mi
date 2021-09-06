@@ -1,9 +1,24 @@
-h1{
-    font-size: 4rem;
-    margin: 8vh;
-}
 
-h2 {
-    font-size: 2rem;
-    margin: 4vh;
+.body{
+    
+    background-color: #006a4d;
+    color: white;
+    height: 100vh;
+
+    h1{
+        font-size: 4rem;
+        margin: 8vh;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin: 4vh;
+    }
+
+    .pin-input {
+        height: 10vh;
+        font-size: 4rem;
+        text-align: center;
+        width: 10vh;
+    }
 }

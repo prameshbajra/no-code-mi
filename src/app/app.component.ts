@@ -12,13 +12,13 @@ export class AppComponent {
     public onePin = "";
     public secondPin = "";
     public thirdPin = "";
-    public positions = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"];
+    public positions = ["", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th"];
     public triplets = this.getTriplets();
 
     public genUniqTriplets(): any {
-        const number = Math.ceil(Math.random() * 1000) + "";
+        const number = Math.ceil(Math.random() * (this.positions.length - 1) * 100) + "";
         const setReady = number.split("");
-        if ((new Set(setReady)).size === 3 && !setReady.includes("0")) {
+        if ((new Set(setReady)).size === 3 && !setReady.includes("0") && !setReady.includes("9")) {
             return setReady.map(value => parseInt(value));
         }
         return this.genUniqTriplets();
